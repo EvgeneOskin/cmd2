@@ -27,6 +27,6 @@ matrix:
     allow_failures:
     - env: TOXENV=pypy
 install:
-- if [[ ! -z $TOXENV ]]; then pip install tox; fi
+- if [[ ! -z $TOXENV ]]; then travis_retry  pip install -U tox; fi
 script:
-- if [[ ! -z $TOXENV ]]; then tox -e $TOXENV; fi
+- if [[ ! -z $TOXENV ]]; then tox -e $TOXENV -v -- -v; fi
