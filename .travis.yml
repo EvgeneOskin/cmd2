@@ -1,5 +1,13 @@
 language: python
+group: beta
+dist: trusty
 sudo: false  # enable container-based build
+os:
+  - linux
+  - osx
+branches:
+  except:
+    - gh-pages
 install:
   - pip install tox
 script:
